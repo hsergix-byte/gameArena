@@ -1,0 +1,961 @@
+/* palette sombre */
+.light {
+  --dark-gray-1: #f5f5f5 !important;
+  --dark-gray-2: #e6e6e6 !important;
+  --dark-gray-3: #d6d6d6 !important;
+  --dark-gray-4: #c6c6c6 !important;
+  --medium-gray: #b6b6b6 !important;
+  --light-gray: #757575 !important;
+  --text-light: #1a1a1a !important;
+
+  --couleur-1: #ff4400;
+  --couleur-2: #ff6a00;
+  --couleur-3: #ff9500;
+  --couleur-4: #ff3300;
+  --couleur-5: #cc3300;
+}
+
+.dark {
+  --dark-gray-1: #0a0a0a;
+  --dark-gray-2: #1a1a1a;
+  --dark-gray-3: #2a2a2a;
+  --dark-gray-4: #3a3a3a;
+  --medium-gray: #4a4a4a;
+  --light-gray: #8a8a8a;
+  --text-light: #e0e0e0;
+
+  --couleur-1: #ff4400;
+  --couleur-2: #ff6a00;
+  --couleur-3: #ff9500;
+  --couleur-4: #ff3300;
+  --couleur-5: #cc3300;
+}
+
+:root {
+  --dark-gray-1: #0a0a0a;
+  --dark-gray-2: #1a1a1a;
+  --dark-gray-3: #2a2a2a;
+  --dark-gray-4: #3a3a3a;
+  --medium-gray: #4a4a4a;
+  --light-gray: #8a8a8a;
+  --text-light: #e0e0e0;
+
+  --couleur-1: #ff4400;
+  --couleur-2: #ff6a00;
+  --couleur-3: #ff9500;
+  --couleur-4: #ff3300;
+  --couleur-5: #cc3300;
+}
+
+/* palette claire */
+
+/* Reset et styles globaux */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  cursor: url("public/Cursor/cursor.png"), auto;
+}
+
+.logoGA {
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+}
+
+#homelogo {
+  max-width: 50px;
+  width: 100%;
+  height: auto;
+}
+
+#homelogo:hover {
+  transform: translateX(5px);
+  transition: ease 600ms;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--dark-gray-2);
+  color: var(--dark-gray-2);
+  min-height: 100vh;
+}
+svg:hover {
+  cursor: url("public/Cursor/cursor-pointor.png"), pointer;
+}
+
+/* Navigation*/
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;
+}
+
+.naviagation {
+  padding: 1.2rem 5%;
+  background-color: var(--dark-gray-1);
+  padding-bottom: 2rem;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 4rem;
+  align-items: center;
+}
+
+.nav-list li {
+  position: relative;
+  cursor: url("public/Cursor/cursor-pointor.png"), pointer !important;
+}
+
+.nav-list li a {
+  font-family: "Nova Square", sans-serif;
+  text-decoration: none;
+  color: var(--light-gray);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: url("public/Cursor/cursor-pointor.png"), pointer !important;
+}
+
+.nav-list li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--couleur-1);
+  transition: width 0.3s ease;
+}
+
+.nav-list li a p {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: -25px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.nav-list li a:hover {
+  color: var(--text-light);
+}
+
+.nav-list li a:hover p {
+  opacity: 1;
+  transform: translateY(0);
+  display: block;
+}
+
+.nav-list li a:hover::after {
+  width: 100%;
+}
+
+.nav-list li:first-child a {
+  color: var(--couleur-1);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+/* Style pour les SVG */
+.nav-list li a svg {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease;
+  fill: currentColor;
+}
+
+.nav-list li a:hover svg {
+  transform: scale(1.1);
+}
+
+.switch {
+  font-family: "Nova Square", sans-serif;
+  border: none;
+  background: transparent;
+  color: var(--couleur-4);
+  transition: all 0.3s ease;
+  padding: 10px;
+}
+
+.switch:hover,
+.switch svg:hover {
+  transform: translateY(-2px);
+  color: var(--text-light);
+  cursor: url("public/Cursor/cursor-pointor.png"), pointer !important;
+}
+
+/* Style spécifique pour le logo GA */
+#homelogo {
+  width: 40px;
+  height: auto;
+}
+
+.Chart,
+.chart,
+.perso {
+  padding: 4rem 5%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Section Home spécifique */
+.Chart {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -70px;
+}
+
+.Chart > div:first-child {
+  flex: 1;
+  max-width: 600px;
+  position: relative;
+  z-index: 2;
+}
+
+.Chart h1 {
+  font-family: "Nova Square", sans-serif;
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  color: var(--couleur-1);
+  animation: slideInFromLeft 1s ease-out;
+}
+
+.Chart h1 b:first-child {
+  color: var(--couleur-2);
+}
+
+.Chart h1 b:last-child {
+  color: var(--couleur-3);
+}
+
+.Chart p,
+.startBtn {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: var(--light-gray);
+  text-align: justify;
+  animation: slideInFromLeft 2s ease-out;
+}
+
+/* Keyframes pour les animations */
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.Chart p b {
+  color: var(--couleur-1);
+  font-weight: 600;
+}
+
+.Chart > div:last-child {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.startBtn {
+  border: none;
+  background: transparent;
+  color: var(--couleur-3);
+  font-size: 20px;
+  font-family: "Nova Square", sans-serif;
+}
+
+.startBtn a:hover {
+  cursor: url(public/Cursor/cursor-pointor.png), pointer !important;
+}
+
+.startBtn a:visited {
+  color: var(--couleur-4);
+}
+
+.startArrow {
+  animation: slideX 2s infinite;
+}
+
+@keyframes slideX {
+  0% {
+    transform: translateX(0px);
+  }
+
+  50% {
+    transform: translateX(50px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+/* Style pour l'image  */
+.image {
+  margin-top: 100px;
+  animation: floatUp 2s ease-in;
+}
+
+.image img {
+  max-width: 70%;
+  height: auto;
+  border-radius: 0;
+  border: none;
+
+  transition: all 1s ease;
+  animation: float 4s ease-out infinite;
+}
+
+.image img:hover {
+  filter: drop-shadow(50px 0 0 var(--couleur-3));
+  cursor: url(public/Cursor/cursor-pointor.png), pointer !important;
+}
+
+/* Sections Game et Shop */
+.chart#Game {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 3rem;
+}
+
+h2,
+.shopgame h4 {
+  font-family: "Nova Square", sans-serif;
+  font-size: 2.5rem;
+
+  margin-bottom: 3rem;
+  color: var(--couleur-1);
+  text-align: center;
+}
+
+.gameselect,
+.shopgame {
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gameselect:hover,
+.shopgame:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+  transition: 120ms;
+  border-bottom: 5px solid var(--couleur-4);
+}
+
+.gameselect h3 {
+  font-family: "Nova Square", sans-serif;
+  font-size: 1.8rem;
+  color: var(--couleur-2);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.gameselect p {
+  color: var(--light-gray);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.gamelogo {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.gamelogo img {
+  max-width: 400px;
+  height: auto;
+  filter: drop-shadow(0 0 1px var(--text-light));
+}
+
+/* Styles des tables pour Shop */
+.shopgame {
+  overflow-x: auto;
+}
+
+.Table {
+  min-width: 600px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.Table th {
+  color: var(--couleur-2);
+  text-transform: uppercase;
+  padding: 1rem;
+  text-align: left;
+  font-family: "Nova Square", sans-serif;
+  border-bottom: 2px solid var(--couleur-1);
+}
+
+.Table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--medium-gray);
+  color: var(--text-light);
+}
+
+.Table tr:hover {
+  background: rgba(255, 104, 0, 0.1);
+}
+
+.btn-buy {
+  background: transparent;
+  color: var(--couleur-4);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.btn-buy:hover {
+  transform: translateY(-2px);
+}
+
+.btn-buy a {
+  color: var(--couleur-4);
+}
+
+.btn-buy:hover a {
+  color: var(--text-light);
+  cursor: url("public/Cursor/cursor-pointor.png"), pointer !important;
+}
+
+.btn-buy {
+  color: var(--couleur-4);
+  text-decoration: none;
+}
+
+/* Section Top Personnages */
+.chart#Topperso {
+  text-align: center;
+  padding: 4rem 5%;
+}
+
+.chart#Topperso h2 {
+  font-family: "Nova Square", sans-serif;
+  font-size: 2.5rem;
+  color: var(--couleur-1);
+  margin-bottom: 1rem;
+}
+
+.perso p {
+  color: var(--text-light);
+}
+
+/* Conteneur des personnages */
+
+.perso h4 {
+  font-family: "Nova Square", sans-serif;
+  font-size: 1.8rem;
+  color: var(--couleur-2);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.perso h4::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--couleur-1);
+  transition: width 0.3s ease;
+}
+
+.perso:hover h4::after {
+  width: 100%;
+}
+
+/* Conteneur pour les images */
+.perso .imgDuPerso {
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+  margin: 1rem auto;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.perso:hover .imgDuPerso {
+  transform: scale(1.05);
+  filter: drop-shadow(70px 0px 0px rgb(255, 94, 0));
+}
+
+.perso .logoGameTopPerso {
+  max-width: 100px;
+  height: auto;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  opacity: 0.2;
+  transition: opacity 0.3s ease;
+}
+
+.perso:hover .logoGameTopPerso {
+  opacity: 1;
+}
+
+.ytb {
+  border-radius: 10px;
+  filter: grayscale(1);
+}
+
+.ytb:hover {
+  height: 315px;
+  transition: ease 1s;
+  filter: grayscale(0);
+}
+
+/* Section Contact */
+.image2 img {
+  max-width: 70%;
+  height: auto;
+  border-radius: 0;
+  border: none;
+  transition: all 1s ease;
+}
+
+.image2 img:hover {
+  filter: drop-shadow(0 0 2px var(--couleur-4));
+}
+
+.chart#Contact {
+  text-align: center;
+  padding: 4rem 5%;
+  background: transparent;
+}
+
+.chart#Contact h2 {
+  font-family: "Nova Square", sans-serif;
+  font-size: 2.5rem;
+  color: var(--couleur-1);
+  margin-bottom: 1rem;
+}
+
+.chart#Contact p {
+  color: var(--light-gray);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chart#Contact h4 {
+  color: var(--couleur-2);
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  font-family: "Nova Square", sans-serif;
+}
+
+/* Réseaux sociaux */
+.reseaux {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.reseaux a {
+  color: var(--text-light);
+  padding: 0.8rem 1.5rem;
+
+  transition: all 0.3s ease;
+}
+
+.reseaux a:hover {
+  color: var(--couleur-5);
+  transform: translateY(-3px);
+  filter: drop-shadow(0 5px 15px rgba(255, 68, 0, 0.3));
+}
+
+.reseaux a svg {
+  width: 100%;
+  height: 30px;
+}
+
+/* Formulaire */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  background: transparent;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px var(--dark-gray-1);
+  transition: ease 500ms;
+}
+
+form label {
+  color: var(--couleur-2);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--medium-gray);
+  border-radius: 5px;
+  background: var(--dark-gray-4);
+  color: var(--text-light);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+form ::placeholder {
+  color: var(--dark-gray-2);
+}
+
+form input:focus,
+form textarea:focus {
+  color: var(--dark-gray-1);
+  outline: none;
+  background-color: var(--couleur-2);
+  border-color: var(--couleur-3);
+}
+
+.btn-submit {
+  background-color: transparent;
+  color: var(--couleur-5);
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 20px;
+  cursor: url("public/Cursor/cursor-pointor.png"), pointer !important;
+  transition: all 0.3s ease;
+
+  font-size: 1rem;
+  width: 100%;
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0px var(--couleur-1);
+}
+
+footer {
+  background: var(--dark-gray-1);
+  padding: 3rem 5%;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logoGameArena {
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 1.5rem;
+  filter: brightness(0.9);
+}
+
+footer p {
+  color: var(--light-gray);
+  margin-bottom: 1.5rem;
+}
+
+.btn-back {
+  background-color: transparent;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  cursor: url("public/Cursor/cursor-pointor.png"), pointer !important;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.btn-back a {
+  color: var(--couleur-4);
+  text-decoration: none;
+}
+
+.btn-back:hover {
+  transform: translateY(-5px);
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-social a {
+  color: var(--light-gray);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+}
+
+.footer-social a:hover {
+  color: var(--couleur-1);
+}
+
+/* Animation pour l'image */
+@keyframes float {
+  0%,
+  100% {
+    transform: perspective(1000px) rotateY(-5deg) rotateX(5deg) translateY(0);
+  }
+
+  50% {
+    transform: perspective(1000px) rotateY(-5deg) rotateX(5deg)
+      translateY(-15px);
+  }
+}
+
+/* Responsive Design unifié */
+@media (max-width: 968px) {
+  .nav-list {
+    gap: 2rem;
+  }
+
+  .nav-list li a {
+    font-size: 0.9rem;
+  }
+
+  .nav-list li a p {
+    font-size: 0.7rem;
+    bottom: -20px;
+  }
+
+  .Chart,
+  .chart {
+    padding: 6rem 5% 4rem;
+  }
+
+  .Chart {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .Chart h1,
+  .gamelist h2,
+  .shopgame caption {
+    font-size: 2.8rem;
+  }
+
+  .Chart p {
+    text-align: center;
+  }
+
+  .Chart > div:first-child {
+    margin-bottom: 3rem;
+  }
+
+  .Chart .image {
+    margin-top: 1px;
+  }
+
+  .Chart img {
+    transform: none;
+    max-width: 80%;
+  }
+
+  .Table {
+    min-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-list {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .nav-list li a {
+    font-size: 0.8rem;
+  }
+
+  .nav-list li a svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  #homelogo {
+    width: 35px;
+  }
+
+  .Chart h1,
+  .gamelist h2,
+  .shopgame caption {
+    font-size: 2.3rem;
+  }
+  .Chart h1 {
+    padding-top: 60px;
+  }
+
+  .Chart p,
+  .gameselect p {
+    font-size: 1rem;
+  }
+
+  .Chart .image {
+    margin-top: 1px;
+  }
+
+  .gameselect,
+  .shopgame {
+    padding: 1.5rem;
+  }
+
+  .gameselect h3 {
+    font-size: 1.5rem;
+  }
+
+  .gamelogo img {
+    max-width: 150px;
+  }
+
+  .perso:hover .imgDuPerso {
+    filter: drop-shadow(20px 0px 0px rgb(255, 94, 0));
+  }
+
+  .ytb {
+    max-width: 90%;
+    max-height: 70%;
+  }
+
+  .ytb:hover {
+    max-height: 100%;
+  }
+
+  h4,
+  .reseaux {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-list {
+    gap: 1rem;
+  }
+
+  .nav-list li a {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+  }
+
+  .nav-list li a p {
+    font-size: 0.6rem;
+    bottom: -15px;
+  }
+
+  .nav-list li a svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  #homelogo {
+    width: 30px;
+  }
+
+  .Chart,
+  .chart {
+    padding: 7rem 5% 3rem;
+  }
+
+  .Chart h1,
+  .gamelist h2,
+  .shopgame caption {
+    font-size: 2rem;
+  }
+
+  .Chart p,
+  .gameselect p {
+    font-size: 0.9rem;
+  }
+
+  .Chart .image {
+    margin-top: 1px;
+  }
+
+  .Chart img {
+    max-width: 95%;
+  }
+
+  .gameselect,
+  .shopgame {
+    padding: 1rem;
+  }
+
+  .gameselect h3 {
+    font-size: 1.3rem;
+  }
+
+  .gamelogo img {
+    max-width: 120px;
+  }
+
+  .Table th,
+  .Table td {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .btn-buy {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
