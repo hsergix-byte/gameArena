@@ -300,9 +300,12 @@ header {
 .startBtn {
   border: none;
   background: transparent;
-  color: var(--couleur-3);
   font-size: 20px;
   font-family: "Nova Square", sans-serif;
+}
+
+.startBtn a {
+  color: var(--couleur-3);
 }
 
 .startBtn a:hover {
@@ -765,7 +768,7 @@ footer p {
   }
 }
 
-/* Responsive Design unifié */
+/* Pour le côté responsive */
 @media (max-width: 968px) {
   .nav-list {
     gap: 2rem;
@@ -881,8 +884,8 @@ footer p {
     max-height: 100%;
   }
 
-  h4,
-  .reseaux {
+  .reseaux,
+  #Contact h4 {
     display: none;
   }
 }
@@ -959,3 +962,4 @@ footer p {
     font-size: 0.8rem;
   }
 }
+
