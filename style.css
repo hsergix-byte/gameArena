@@ -665,7 +665,7 @@ form textarea {
 }
 
 form ::placeholder {
-  color: var(--dark-gray-2);
+  color: var(--light-gray);
 }
 
 form input:focus,
@@ -962,4 +962,5 @@ footer p {
     font-size: 0.8rem;
   }
 }
+
 
